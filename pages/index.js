@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 
 export async function getStaticProps() {
+  // ソートされたデータが入ってくる
   const allPostsData = getSortedPostsData()
   return {
     props: {
@@ -11,7 +12,7 @@ export async function getStaticProps() {
     }
   }
 }
-
+// getStaticPropsの実行で帰ってきたデータを元Homeに渡す
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
